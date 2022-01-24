@@ -5,14 +5,19 @@ font-family: 'Chakra Petch', sans-serif;   for pixelated one
 font-family: 'Varela Round', sans-serif;   for round one
 font-family: 'Recursive', sans-serif;      for text
 
+
 body{
-    background-image: url('bg2.png');
+    height: 100vh;
 }
 
 
-
 */
-
+body{
+    background-image: url('bgA.jpg');
+    background-repeat: no-repeat;
+    
+    overflow: hidden;
+}
 
 *{
     margin: 0;
@@ -20,10 +25,10 @@ body{
 }
 
 .gameContainer{
-    
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
+    
 }
 
 .container{
@@ -31,10 +36,13 @@ body{
     display: grid;
     grid-template-columns: repeat(3,10vw);
     grid-template-rows: repeat(3, 10vw);
+    margin-top: 20vh;
+    margin-left: 5vw;
+    margin-right: 75px;
 }
 
 .box{
-    border: 2px solid black;
+    border: 5px solid black;
     font-size: 8vw;
     display: flex;
     justify-content: center;
@@ -42,15 +50,40 @@ body{
     cursor: pointer;
 }
 .box:hover{
-    background-color: aquamarine;
+    background-color: rgb(154, 200, 158);
    
 }
 
 .gameInfo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 13vh;
     padding: 0 34px;
     font-family: 'Recursive', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    padding: 20px;
+    font-size: 60px;
+    color: rgb(196, 218, 198);
+    text-shadow: -3px 3px 0 #000,
+                          3px 3px 0 #000,
+                         3px -3px 0 #000,
+                        -3px -3px 0 #000;
+}
+.boxtext{
+    
+    font-weight: bold;
 }
 
+h3{
+    color: rgb(223, 248, 226);
+    text-shadow: -1px 1px 0 #000,
+                          1px 1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px -1px 0 #000;
+}
 .imgbox img{
     width: 0;
     transition: width 1s ease-in-out;
@@ -70,11 +103,61 @@ body{
 }
 
 #reset{
+    
     font-family: 'Varela Round', sans-serif;
     margin: 0 23px;
-    padding: 6px 14px;
+    font-size: 30px;
+    width: 150px;
+    height: 50px;
     background:rgb(180, 187, 202);
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1200px) 
+{
+    .container{
+        margin-top: 25vh ;
+    }
+
+    .gameInfo{
+        margin-top: 25vh;
+    }
+    .info{
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (max-width: 800px) 
+{
+    .gameContainer{
+        
+        flex-direction: column;
+    }
+    .gameInfo{
+        margin-top: 30px;
+    }
+    .container{
+        margin: auto;
+        margin-top: 10vh;
+        margin-bottom: 30px;
+        grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3, 100px);
+    }
+    .info{
+        text-align: center;
+    }
+    h3{
+        text-align: center;
+    }
+    .boxtext{
+        font-size: 60px;
+        font-weight: bold;
+    }
 }
