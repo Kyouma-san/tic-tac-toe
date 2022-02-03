@@ -15,7 +15,7 @@ body{
 body{
     background-image: url('bgA.jpg');
     background-repeat: no-repeat;
-    
+    background-size: cover;
     overflow: hidden;
 }
 
